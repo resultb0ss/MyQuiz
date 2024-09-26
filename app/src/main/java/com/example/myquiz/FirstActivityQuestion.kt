@@ -62,5 +62,12 @@ class FirstActivityQuestion : AppCompatActivity() {
         }
     }
 
+    private fun dataExtra(data: Int, intent: Intent,num:Int) {
+        var score = data
+        score += num
+        intent.putExtra("score", score)
+        startActivity(intent)
+    }
+
 
 }

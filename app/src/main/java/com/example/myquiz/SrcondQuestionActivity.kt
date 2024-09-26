@@ -21,48 +21,27 @@ class SrcondQuestionActivity : AppCompatActivity() {
         binding.secondActivityQuestionAnswerOneRB.setOnClickListener(radioButtonClickListener)
         binding.secondActivityQuestionAnswerThreeRB.setOnClickListener(radioButtonClickListener)
 
-
-
-
-
     }
 
     private val radioButtonClickListener = View.OnClickListener { view ->
 
         val intentMain = Intent(this,ThirdQuestionActivity::class.java)
-
         val intentData = getIntent()
         val data = intentData.getIntExtra("score",0)
 
-
-
         when (view) {
-            binding.secondActivityQuestionAnswerOneRB -> {
-                var score = data
-                score += 0
-                intentMain.putExtra("score",score)
-                startActivity(intentMain)
-
-
-
-            }
-            binding.secondActivityQuestionAnswerTwoRB -> {
-                var score = data
-                score += 1
-                intentMain.putExtra("score",score)
-                startActivity(intentMain)
-
-
-
-            }
-            binding.secondActivityQuestionAnswerThreeRB -> {
-                var score = data
-                score += 0
-                intentMain.putExtra("score",score)
-                startActivity(intentMain)
-
-
-            }
+            binding.secondActivityQuestionAnswerOneRB -> dataExtra(data, intentMain,0)
+            binding.secondActivityQuestionAnswerTwoRB -> dataExtra(data, intentMain,1)
+            binding.secondActivityQuestionAnswerThreeRB -> dataExtra(data, intentMain,0)
         }
     }
+
+    private fun dataExtra(data: Int, intent: Intent,num:Int) {
+        var score = data
+        score += num
+        intent.putExtra("score", score)
+        startActivity(intent)
+    }
+
+
 }

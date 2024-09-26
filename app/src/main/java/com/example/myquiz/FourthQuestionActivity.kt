@@ -27,8 +27,6 @@ class FourthQuestionActivity : AppCompatActivity() {
         binding.fourthActivityQuestionAnswerTwoRB.setOnClickListener(radioButtonClickListener)
         binding.fourthActivityQuestionAnswerThreeRB.setOnClickListener(radioButtonClickListener)
 
-
-
     }
 
     private val radioButtonClickListener = View.OnClickListener { view ->
@@ -37,32 +35,17 @@ class FourthQuestionActivity : AppCompatActivity() {
         val intentData = getIntent()
         val data = intentData.getIntExtra("score",0)
 
-
         when (view) {
-            binding.fourthActivityQuestionAnswerOneRB -> {
-                var score = data
-                score += 0
-                intent.putExtra("score",score)
-                startActivity(intent)
-
-
-            }
-            binding.fourthActivityQuestionAnswerTwoRB -> {
-                var score = data
-                score += 1
-                intent.putExtra("score",score)
-                startActivity(intent)
-
-
-            }
-            binding.fourthActivityQuestionAnswerThreeRB -> {
-                var score = data
-                score += 0
-                intent.putExtra("score",score)
-                startActivity(intent)
-
-
-            }
+            binding.fourthActivityQuestionAnswerOneRB -> dataExtra(data, intent,0)
+            binding.fourthActivityQuestionAnswerTwoRB -> dataExtra(data, intent,1)
+            binding.fourthActivityQuestionAnswerThreeRB -> dataExtra(data, intent,0)
         }
+    }
+
+    private fun dataExtra(data: Int, intent: Intent,num:Int) {
+        var score = data
+        score += num
+        intent.putExtra("score", score)
+        startActivity(intent)
     }
 }

@@ -34,31 +34,17 @@ class ThirdQuestionActivity : AppCompatActivity() {
         val data = intentData.getIntExtra("score",0)
 
         when (view) {
-            binding.thirdActivityQuestionAnswerOneRB -> {
-                var score = data
-                score += 0
-                intentMain.putExtra("score",score)
-                startActivity(intentMain)
-
-
-            }
-            binding.thirdActivityQuestionAnswerTwoRB -> {
-                var score = data
-                score += 0
-                intentMain.putExtra("score",score)
-                startActivity(intentMain)
-
-
-            }
-            binding.thirdActivityQuestionAnswerThreeRB -> {
-                var score = data
-                score += 1
-                intentMain.putExtra("score",score)
-                startActivity(intentMain)
-
-
-            }
+            binding.thirdActivityQuestionAnswerOneRB -> dataExtra(data, intentMain,0)
+            binding.thirdActivityQuestionAnswerTwoRB -> dataExtra(data, intentMain,0)
+            binding.thirdActivityQuestionAnswerThreeRB -> dataExtra(data, intentMain,1)
         }
+    }
+
+    private fun dataExtra(data: Int, intent: Intent,num:Int) {
+        var score = data
+        score += num
+        intent.putExtra("score", score)
+        startActivity(intent)
     }
 
 }
