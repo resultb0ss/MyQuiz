@@ -35,30 +35,9 @@ class FirstActivityQuestion : AppCompatActivity() {
 
         val intent = Intent(this,SrcondQuestionActivity::class.java)
         when (view) {
-            binding.firsActivityQuestionAnswerOneRB -> {
-                var score = 0
-                score += 1
-                intent.putExtra("score",score)
-                startActivity(intent)
-
-
-            }
-            binding.firsActivityQuestionAnswerTwoRB -> {
-                var score = 0
-                score += 0
-                intent.putExtra("score",score)
-                startActivity(intent)
-
-
-            }
-            binding.firsActivityQuestionAnswerThreeRB -> {
-                var score = 0
-                score += 0
-                intent.putExtra("score",score)
-                startActivity(intent)
-
-
-            }
+            binding.firsActivityQuestionAnswerOneRB -> dataExtra(0, intent,1)
+            binding.firsActivityQuestionAnswerTwoRB -> dataExtra(0, intent,0)
+            binding.firsActivityQuestionAnswerThreeRB -> dataExtra(0, intent,0)
         }
     }
 
