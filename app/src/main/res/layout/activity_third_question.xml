@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThirdQuestionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:background="#4D4CAF50">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/thirdActivityQuestionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Кто крестил Русь"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="60dp"
+                android:textStyle="bold"/>
+
+            <RadioButton
+                android:id="@+id/thirdActivityQuestionAnswerOneRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Петр I"/>
+
+            <RadioButton
+                android:id="@+id/thirdActivityQuestionAnswerTwoRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Леонид Ильич Брежнев"/>
+
+            <RadioButton
+                android:id="@+id/thirdActivityQuestionAnswerThreeRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Князь Владимир"/>
+
+
+
+
+        </RadioGroup>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
